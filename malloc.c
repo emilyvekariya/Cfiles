@@ -2,11 +2,26 @@
 #include<stdlib.h>
 
 int main(){
-int *fp;
-fp=(int *)malloc(sizeof(int));
-printf("memory allocated %p\n",fp);
-printf("initial value of *fp %d\n",*fp);
-*fp=25;
-printf("after assigning value of *fp %d\n",*fp);
-free(fp);
-}
+
+    int size;
+    char *text = NULL;
+
+    printf("Enter a size of the text: ");
+    scanf("%d",&size);
+
+    text = (char *) malloc(size * sizeof(char));
+    
+
+    if( text != NULL){
+        printf("Enter a text: ");
+        //scanf("%s\n",text);
+        scanf(" ");
+        gets(text);
+
+        printf("the inputted text is:  %s\n",text);
+    }
+        
+    free(text);
+    text = NULL;
+
+    }
